@@ -81,11 +81,6 @@ body {
   text-decoration: none;
 }
 
-.link:hover,
-.link:focus {
-  color: var(--active-color);
-}
-
 /*navigation sector*/
 
 .logo {
@@ -132,55 +127,27 @@ body {
 }
 
 .contacts-item {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
+  gap: 10px;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-color);
+  fill: var(--second-color);
 }
 .contacts-item:hover,
 .contacts-item:focus {
   color: var(--active-color);
+  fill: var(--active-color);
 }
 
 .cnt-item {
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
-
-.cnt-icon-mail,
-.cnt-icon-phone {
-  margin-right: 10px;
-}
-.cnt-icon-mail:hover,
-.cnt-icon-mail:focus {
-  fill: var(--active-color);
-  cursor: pointer;
-}
-.cnt-icon-phone:hover,
-.cnt-icon-phone:focus {
-  fill: var(--active-color);
-  cursor: pointer;
-}
-/* .cnt-icon-phone::before {
-  display: inline-flex;
-  content: '';
-  width: 10px;
-  height: 16px;
-  align-items: stretch;
-  background-image: url(../icon/icon-telephone.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 10px;
-} */
-/* 
-.cnt-icon-phone:hover:,
-.cnt-icon-phone:focus {
-  fill: var(--active-color);
-} */
 
 /*main section*/
 .hero {
@@ -242,8 +209,7 @@ body {
 }
 .tumb {
   display: flex;
-  margin: 0;
-  padding: 0;
+  justify-content: center;
   margin-bottom: 30px;
   width: 270px;
   height: 120px;
@@ -252,10 +218,6 @@ body {
   border-radius: 4px;
 }
 
-.tumb-icon {
-  margin: auto;
-  fill: #212121;
-}
 /* OUR WORK */
 .process-title {
   margin-bottom: 50px;
@@ -313,35 +275,26 @@ body {
 .social-list {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 16px;
   gap: 10px;
 }
-.social-item {
-  display: flex;
-}
+
 .social-icon {
-  fill: #afb1b8;
-}
-.social-icon:hover,
-.social-icon:focus {
-  fill: var(--active-color);
-}
-.social-link:hover {
-  background-color: var(--active-color);
-}
-.social-link:hover .social-icon {
-  fill: #fff;
+  fill: currentColor;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   width: 44px;
   height: 44px;
-  background-color: #ffff;
   border-radius: 50%;
+  color: #afb1b8;
+}
+.social-link:hover {
+  background-color: var(--active-color);
+  color: #ffffff;
 }
 /*button list*/
 .btn-item {
@@ -428,7 +381,6 @@ body {
 
 .example-btn {
   display: block;
-
   padding: 6px 22px;
   font-family: inherit;
   font-weight: 500;
@@ -441,7 +393,9 @@ body {
   border-radius: 4px;
   cursor: pointer;
 }
-
+.example-link {
+  display: block;
+}
 .btn-list-item:not(:last-child) {
   margin-right: 8px;
 }
@@ -453,33 +407,33 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
-.example-item:hover {
+.example-link:hover,
+.example-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 /* Our clients */
 .clients-logo {
-  color: #afb1b8;
+  fill: currentColor;
 }
 
 .clients-list {
   display: flex;
   justify-content: center;
+  gap: 30px;
 }
 .clients-link {
   display: flex;
-  background-size: cover;
   justify-content: center;
   align-items: center;
-  margin-right: 30px;
   width: 170px;
   height: 92px;
-  border: 1px solid #afb1b8;
+  border: 1px solid currentColor;
   border-radius: 4px;
-  fill: #afb1b8;
+  color: #afb1b8;
 }
 .clients-link:hover {
-  fill: var(--active-color);
+  color: var(--active-color);
 }
 
 /* .clients-container {
@@ -492,14 +446,15 @@ body {
 /*footer section*/
 .footer {
   background: var(--second-becgraund-color);
-  max-width: 1600px;
+  /* max-width: 1600px; */
   padding: 60px 0;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 .footer-list {
-  display: flex;
+  display: block;
   margin-left: 215px;
+  margin-right: 70px;
   align-items: center;
 }
 .logo-footer {
@@ -533,13 +488,8 @@ body {
   line-height: calc(24 / 14);
 }
 .footer-title {
-  width: 116px;
-  height: 16px;
   margin-bottom: 20px;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-align: center;
   letter-spacing: 0.03em;
   color: #fff;
 }
@@ -575,6 +525,15 @@ body {
   padding: 0 auto;
 }
 
-.footer-social-item:hover {
+.footer-social-item:hover,
+.footer-social-item:focus {
   background-color: var(--active-color);
+}
+.footer .conteiner {
+  display: flex;
+  align-items: baseline;
+}
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--active-color);
 }
